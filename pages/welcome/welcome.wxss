@@ -4,7 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #b3d4db; */
+  background-color: #b3d4db;
+}
+
+.l-avatar{
+  margin-top: 160rpx;
 }
 
 .avatar{
@@ -35,4 +39,8 @@
   font-size: 22rpx;
   color:#405f80;
   line-height: 80rpx;
+}
+
+page{
+  background-color: #b3d4db;
 }
