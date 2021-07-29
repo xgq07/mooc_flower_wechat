@@ -4,6 +4,6 @@
   <l-avatar class="l-avatar" placement="bottom"  open-data="{{['userAvatarUrl','userNickName']}}" size="180" ></l-avatar>
   <text class="motto">helo</text>
   <view class="journey-container">
-    <text class="journey">开启小程序之旅</text>
+    <text bind:tap="onTap" class="journey">开启小程序之旅</text>
   </view>
 </view>
