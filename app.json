@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/welcome/welcome",
-    "pages/posts/posts"
+    "pages/posts/posts",
+    "pages/post-detail/post-detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#C22A1E"
   },
   "usingComponents": {
-    "l-avatar":"/miniprogram_npm/lin-ui/avatar/index",
-    "l-icon":"/miniprogram_npm/lin-ui/icon/index"
+    "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index"
   }
 }

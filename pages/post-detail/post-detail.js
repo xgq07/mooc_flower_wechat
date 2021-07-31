@@ -1,4 +1,4 @@
-// pages/welcome.js
+// pages/post-detail/post-detail.js
 Page({
 
   /**
@@ -8,12 +8,6 @@ Page({
 
   },
 
-  onTap: function (){
-    wx.redirectTo({
-      url: '/pages/posts/posts',
-    })
-  },
-  
   /**
    * 生命周期函数--监听页面加载
    */
