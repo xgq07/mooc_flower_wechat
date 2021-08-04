@@ -7,6 +7,7 @@
   "window": {
     "navigationBarBackgroundColor": "#C22A1E"
   },
+  "requiredBackgroundModes": ["audio", "location"],
   "usingComponents": {
     "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
     "l-icon": "/miniprogram_npm/lin-ui/icon/index"

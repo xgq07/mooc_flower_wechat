@@ -21,7 +21,7 @@
         {
           "name": "pages/post-detail/post-detail",
           "pathName": "pages/post-detail/post-detail",
-          "query": "",
+          "query": "pid=1",
           "scene": null
         }
       ]

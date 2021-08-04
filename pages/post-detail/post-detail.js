@@ -1,15 +1,17 @@
 // pages/post-detail/post-detail.js
 import {postList} from '../../data/data.js'
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     collect:false,
     postData:{},
+    isPlaying:false,
     _pid:null,
-    _postCollect : {}
+    _postCollect : {},
+    _bgm:null
   },
 
   onCollect(event){
@@ -32,6 +34,36 @@ Page({
     wx.setStorageSync('postCollect', postCollect)
   },
 
+  onMusicStart(event){
+    // const bgm = wx.getBackgroundAudioManager()
+    const bgm = this.data._bgm
+    bgm.src = this.data.postData['music']['url']
+    bgm.title = this.data.postData['music']['title']
+    bgm.coverImgUrl = this.data.postData['music']['coverImg']
+
+    app.gIsPlayingMusic = true
+    app.gIsPlayingMusicPostId = this.data._pid
+    this.setData({
+      isPlaying:true
+    })
+  },
+
+  onMusicStop(event){
+    const bmg = this.data._bgm
+    bmg.pause()
+    app.gIsPlayingMusic = false
+    app.gIsPlayingMusicPostId = -1
+    this.setData({
+      isPlaying:false
+    })
+  },
+
+  onSharp(event){
+    wx.showActionSheet({
+      itemList:['分享到拼多多','分享到抖音']
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -47,6 +79,16 @@ Page({
       postData,
       collect: postCollect[options.pid]
     })
+
+    if (app.gIsPlayingMusic && app.gIsPlayingMusicPostId === this.data._pid){
+      this.setData({
+          isPlaying:true
+      })
+    }
+
+    this.data._bgm = wx.getBackgroundAudioManager()
+    this.data._bgm.onPlay(this.onMusicStart)
+    this.data._bgm.onPause(this.onMusicStop)
   },
 
   /**
