@@ -3,6 +3,29 @@
   margin-bottom: 30rpx;
   /* background-color: red !important; */
 }
+
+.ex-search-bar{
+  height: 80rpx !important; 
+}
+
+.search-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  padding: 30rpx 28rpx;
+  justify-content: space-between;
+}
+
+.search-container::after{
+  content:'';
+  width: 200rpx;
+}
+
+.movie{
+  margin-bottom: 30rpx;
+}
+
 page{
   background-color: #f2f2f2;
 }
+

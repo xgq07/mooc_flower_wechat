@@ -1,4 +1,14 @@
 <!--pages/movies/movies.wxml-->
-<movies-list title="正在热映" movies="{{inTheaters}}" f-class="movies-list"/>
-<movies-list title="即将上映" movies="{{comingSoon}}" f-class="movies-list"/>
-<movies-list title="豆瓣Top250"  movies="{{top250}}" f-class="movies-list"/>
+<l-search-bar bind:linconfirm="onConfirm" bind:lincancel="onSearchCancel" l-class="ex-search-bar" placeholder="请输入电影名称" />
+<view wx:if="{{!searchResult}}">
+  <movies-list  data-type="in_theaters"  bind:tap="onGotoMore" title="正在热映" movies="{{inTheaters}}" f-class="movies-list"/>
+  <movies-list  data-type="coming_soon" bind:tap="onGotoMore" title="即将上映" movies="{{comingSoon}}" f-class="movies-list"/>
+  <movies-list  data-type="top250" bind:tap="onGotoMore" title="豆瓣Top250"  movies="{{top250}}" f-class="movies-list"/>
+</view>
+<view wx:else>
+  <view class="search-container" >
+    <block wx:for="{{searchData}}" wx:key="index">
+      <movies class="movie" movie="{{item}}"/>
+    </block>
+  </view>
+</view>

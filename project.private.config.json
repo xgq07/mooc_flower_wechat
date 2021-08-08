@@ -23,6 +23,18 @@
           "pathName": "pages/post-detail/post-detail",
           "query": "pid=1",
           "scene": null
+        },
+        {
+          "name": "pages/more-movie/more-movie",
+          "pathName": "pages/more-movie/more-movie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/movies/movies",
+          "pathName": "pages/movies/movies",
+          "query": "",
+          "scene": null
         }
       ]
     }

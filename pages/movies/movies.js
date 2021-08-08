@@ -9,6 +9,8 @@ Page({
     inTheaters:[],
     comingSoon:[],
     top250:[],
+    searchResult:false,
+    searchData:[]
   },
 
   /**
@@ -58,6 +60,37 @@ Page({
     })
   },
 
+  onGotoMore(event){
+    console.log(event)
+    wx.navigateTo({
+      url: '/pages/more-movie/more-movie?type='+event.currentTarget.dataset.type,
+    })
+  },
+
+  onConfirm(event){
+    console.log(event)
+    this.setData({
+      searchResult:true
+    })
+    wx.request({
+      url: app.gBaseUrl + 'search',
+      data:{
+        q:event.detail.value
+      },
+      success:(res)=>{
+        this.setData({
+          searchData:res.data.subjects
+        })
+      }
+    })
+  },
+
+  onSearchCancel(event){
+    this.setData({
+      searchResult:false
+    })
+    console.log("onSearchCancel")
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

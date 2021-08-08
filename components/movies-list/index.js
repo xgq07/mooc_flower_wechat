@@ -10,6 +10,8 @@ Component({
     "movies":Array
   },
 
+
+
   /**
    * 组件的初始数据
    */
