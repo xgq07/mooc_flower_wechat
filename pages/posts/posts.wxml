@@ -13,7 +13,7 @@
 </swiper>
 
 <block wx:for="{{postList}}" wx:key="index">
-  <post res="{{item}}" bind:tap="onGoToDetail" data-post-id="{{item.postId}}" ></post>
+  <post res="{{item}}" bind:postTap='onGoToDetail' ></post>
 </block>
 
 </view>

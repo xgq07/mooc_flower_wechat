@@ -1,5 +1,4 @@
-import {postList} from '../../data/data.js'
-// pages/posts/posts.js
+// pages/movie-detail/movie-detail.js
 Page({
 
   /**
@@ -9,24 +8,12 @@ Page({
 
   },
 
-  onGoToDetail(event){
-      console.log(event)
-      const pid = event.detail.pid
-      wx.navigateTo({
-        url: '/pages/post-detail/post-detail?pid=' + pid
-      })
-  },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     this.setData({
-      postList
-    })
-  },
 
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
