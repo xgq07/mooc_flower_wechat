@@ -1,4 +1,5 @@
 // pages/movies/movies.js
+
 const app = getApp()
 Page({
 

@@ -37,7 +37,8 @@
   "usingComponents": {
     "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
     "l-icon": "/miniprogram_npm/lin-ui/icon/index",
-    "movies": "/components/movies/index"
+    "movies": "/components/movies/index",
+    "l-rate":"/miniprogram_npm/lin-ui/rate/index"
   },
   "sitemapLocation": "sitemap.json"
 }
